@@ -36,6 +36,7 @@ jobs:
       git config --global user.name 'maroof49'
       git config --global user.email 'maroof.siddiqui18@gmail.com'
       sed -i "s/^  tag: .*/  tag: ${{ github.run_number }}/" values.yaml
+      git remote set-url origin https://x-access-token:${{ secrets.PUSH_TOKEN }}@github.com/DevOps-Skillfyme/DEVOPS-GITOPS-ArgoCD-CICD.git
       git add values.yaml
       git commit -m "Update file values.yaml"
-      git push
+      git push origin master
